@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Oceanographic Analysis</title>
+    <style>
+      html, body { height: 100%; margin: 0; padding: 0; }
+      iframe {
+        width: 100%;
+        height: 100vh;
+        border: none;
+        display: block;
+        background: #000;
+      }
+      
+      .home-button {
+        position: fixed;
+        top: 20px;
+        right: 25px;
+        z-index: 1000;
+      }
+      
+      .home-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        background: #000;
+        border-radius: 50%;
+        color: white;
+        text-decoration: none;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        font-weight: 500;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .home-link:hover,
+      .home-link:active {
+        background: white;
+        color: black;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+      }
+      
+      .home-link svg {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.3s ease;
+      }
+      
+      .home-link:hover svg,
+      .home-link:active svg {
+        transform: scale(1.1);
+      }
+      
+      .iframe-error {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.9);
+        color: white;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        z-index: 999;
+      }
+      
+      .iframe-error.show {
+        display: block;
+      }
+    </style>
+  </head>
+  <body>
+    <iframe 
+      id="analysis-iframe"
+      src="https://atullyum.github.io/jav1/" 
+      title="Oceanographic Wave Analysis"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+      sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-popups-to-escape-sandbox"
+      loading="lazy"
+      onerror="showError()">
+    </iframe>
+    
+    <div class="iframe-error" id="iframe-error">
+      <h3>Unable to load Oceanographic Analysis</h3>
+      <p>The embedded content could not be loaded.</p>
+      <a href="https://atullyum.github.io/jav1/" target="_blank" style="color: #58a6ff; text-decoration: none;">
+        Open in new tab →
+      </a>
+    </div>
+    
+    <div class="home-button">
+      <a href="index.html" class="home-link">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+          <polyline points="9,22 9,12 15,12 15,22"></polyline>
+        </svg>
+      </a>
+    </div>
+    
+    <script>
+      function showError() {
+        const errorDiv = document.getElementById('iframe-error');
+        if (errorDiv) {
+          errorDiv.classList.add('show');
+        }
+      }
+      
+      // Check if iframe loads successfully
+      window.addEventListener('load', function() {
+        const iframe = document.getElementById('analysis-iframe');
+        if (iframe) {
+          iframe.addEventListener('load', function() {
+            console.log('Analysis iframe loaded successfully');
+          });
+          
+          // Fallback: show error after 10 seconds if iframe doesn't load
+          setTimeout(function() {
+            if (iframe.contentDocument === null || iframe.contentWindow === null) {
+              showError();
+            }
+          }, 10000);
+        }
+      });
+    </script>
+  </body>
+</html>

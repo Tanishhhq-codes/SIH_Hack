@@ -1,0 +1,37 @@
+{
+  "name": "kerala-floods-geospatial-analysis",
+  "version": "1.0.0",
+  "description": "Interactive web application for analyzing Kerala flood data using Sentinel-1 SAR GeoTIFF files",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "python -m http.server 8000",
+    "dev": "python -m http.server 8000"
+  },
+  "keywords": [
+    "geospatial",
+    "flood-analysis",
+    "sentinel-1",
+    "geotiff",
+    "leaflet",
+    "kerala",
+    "sar",
+    "satellite-imagery"
+  ],
+  "author": "MapOcean",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mapocean/kerala-floods-analysis"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}
