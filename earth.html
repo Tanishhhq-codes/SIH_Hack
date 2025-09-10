@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Earth - Blank Page</title>
+    <style>
+      html, body { height: 100%; margin: 0; background: #000; }
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.7);
+        backdrop-filter: blur(10px);
+        padding: 12px 24px;
+        z-index: 1000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+      }
+      .nav-item {
+        color: #fff;
+        text-decoration: none;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        font-size: 14px;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+      }
+      .nav-item:hover {
+        background: rgba(255, 255, 255, 0.1);
+        color: #58a6ff;
+      }
+      .nav-item.active {
+        background: rgba(88, 166, 255, 0.2);
+        color: #58a6ff;
+      }
+      .content {
+        padding-top: 80px;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="home.html" class="nav-item">Home</a>
+      <a href="earth.html" class="nav-item active">Earth</a>
+      <a href="#" class="nav-item">Map</a>
+      <a href="#" class="nav-item">Weather</a>
+      <a href="#" class="nav-item">Alert</a>
+    </nav>
+    <div class="content">
+      <h1>Earth Page</h1>
+    </div>
+  </body>
+</html>
