@@ -3,69 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Map</title>
-    <style>
-      html, body { height: 100%; margin: 0; background: #000; }
-      .navbar {
-        position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
-        background: rgba(0, 0, 0, 0.3);
-        backdrop-filter: blur(10px);
-        padding: 12px 24px;
-        z-index: 1000;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 32px;
-      }
-      .nav-item {
-        color: #fff;
-        text-decoration: none;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        font-size: 14px;
-        font-weight: 500;
-        padding: 8px 16px;
-        border-radius: 6px;
-        transition: all 0.2s ease;
-      }
-      .nav-item:hover { background: rgba(255, 255, 255, 0.1); color: #58a6ff; }
-      .nav-item.active { background: rgba(88, 166, 255, 0.2); color: #58a6ff; }
-      .content {
-        padding-top: 80px;
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #fff;
-        font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-        font-size: 24px;
-      }
-    </style>
+    <title>Ocean Hazard Monitor</title>
+    <script>
+      // Immediate redirect to the external website
+      window.location.replace('https://tanishhhq-codes.github.io/GeoTIFFmap/');
+    </script>
   </head>
   <body>
-    <nav class="navbar">
-      <a href="index.html" class="nav-item">Home</a>
-      <a href="earth.html" class="nav-item">Earth</a>
-      <a href="/mapocean/index.html" class="nav-item">Map</a>
-      <a href="weather.html" class="nav-item">Weather</a>
-      <a href="alert.html" class="nav-item">Alert</a>
-      <a href="analysis.html" class="nav-item">Analysis</a>
-    </nav>
-    <div class="content">
-      <h1>Map Page</h1>
-    </div>
-    <script>
-      (function() {
-        var links = document.querySelectorAll('.nav-item');
-        var path = location.pathname.split('/').pop() || 'index.html';
-        links.forEach(function(link){
-          var href = link.getAttribute('href');
-          if (href === path) link.classList.add('active');
-        });
-      })();
-    </script>
+    <!-- Fallback content in case JavaScript is disabled -->
+    <p>GeoTIFF Map</p>
+    <a href="https://tanishhhq-codes.github.io/GeoTIFFmap/">Click here if you are not redirected automatically</a>
   </body>
 </html>
-
